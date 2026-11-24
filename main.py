@@ -36,6 +36,8 @@ def gate_problems(text):
     problems = []
     if not text.strip():
         problems.append("entry is blank or only whitespace")
+    if text != text.strip():
+        problems.append("entry has leading or trailing whitespace")
     # The gate counts characters, not bytes: a multibyte UTF-8
     # character still counts as one character toward the limit.
     length = len(text)
